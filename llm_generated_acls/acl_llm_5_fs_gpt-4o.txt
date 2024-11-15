@@ -1,0 +1,4 @@
+ip access-list extended allow_web_traffic
+  permit tcp any host 172.27.8.55 eq 80
+  permit tcp any host 172.27.8.55 eq 443
+  deny ip any any

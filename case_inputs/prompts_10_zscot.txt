@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that allows all ftp traffic, only allows tcp traffic if it's coming from ports in the range from 50000 to 51000, and allows all other traffic. Let's think step by step.

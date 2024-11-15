@@ -1,0 +1,22 @@
+!
+version 15.2
+!
+hostname cisco_router_test_A
+!
+!
+ip access-list extended blockServer
+	deny ip any host 65.9.121.32
+	permit ip any any
+!
+ip access-list extended X
+	deny ip any host 65.9.121.32
+	permit ip any any
+!
+!
+interface GigabitEthernet0/0
+	ip address 192.168.1.1 255.255.255.0
+	no shutdown
+	ip access-group blockServer in
+!
+!
+end

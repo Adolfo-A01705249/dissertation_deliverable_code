@@ -1,0 +1,3 @@
+access-list ALCtrl extended
+access-list ALCtrl extended permit tcp host 10.25.40.1 host 172.16.5.10 eq 23
+access-list ALCtrl extended deny ip any any

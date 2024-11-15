@@ -1,0 +1,13 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 0.0.0.0/0
+dstIP: 0.0.0.0/0
+","srcIp: 0.0.0.0/0
+dstIP: 65.9.121.32/32
+
+",cisco_router_test_a__configs__example_acl_1,X,deny ip any any,REJECT,cisco_router_test_a__configs__example_acl_2,X,permit ip any any,ACCEPT
+1,"srcIp: 0.0.0.0/0
+dstIP: 0.0.0.0/0
+","srcIp: 0.0.0.0/0
+dstIP: 65.9.121.32/32
+
+",cisco_router_test_a__configs__example_acl_1,blockServer,deny ip any any,REJECT,cisco_router_test_a__configs__example_acl_2,blockServer,permit ip any any,ACCEPT

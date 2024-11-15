@@ -1,0 +1,4 @@
+access-list extended DENY_100_200
+ deny ip 192.168.100.0 0.0.0.255 any
+ deny ip any any except 192.168.100.50
+ permit ip any any

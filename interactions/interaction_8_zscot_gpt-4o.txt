@@ -1,0 +1,42 @@
+System prompt:
+You are a helpful, respectful and honest network configuration assistant.
+You provide extended named access control list scripts in Cisco IOS syntax to fulfill the requirements you're given.
+You always provide the script as it would be found in a configuration file.
+Make sure to use the syntax for *extended* and *named* access control lists.
+Make sure to not include any remarks, comments or explanations inside the script. 
+Make sure to not include any console navigation commands.
+Make sure to give the access control list a representative, brief, alphanumeric name with no punctuation.
+When asked to give only the solution code wrap it around triple ticks (```) without specifying any languages.
+
+User prompt:
+Please give me the script for an extended named ACL that allows all traffic from networks in the range from 192.168.0.0/24 to 192.168.3.0/24, and blocks all other traffic. Let's think step by step.
+
+The model's response:
+Certainly! To create an extended named access control list (ACL) that allows traffic from the networks in the range from 192.168.0.0/24 to 192.168.3.0/24 and blocks all other traffic, you can follow these steps: 
+
+1. Create a named ACL.
+2. Permit traffic from each network in the specified range.
+3. Deny all other traffic implicitly (no need to add a deny statement for all other traffic, as it is implicitly denied).
+
+Below is the script following these steps:
+
+```
+ip access-list extended AllowRange
+ permit ip 192.168.0.0 0.0.0.255 any
+ permit ip 192.168.1.0 0.0.0.255 any
+ permit ip 192.168.2.0 0.0.0.255 any
+ permit ip 192.168.3.0 0.0.0.255 any
+```
+
+User prompt:
+Now please give me only the solution as only one code snippet so I can store it in a configuration file (without explanations or any other text)
+
+The model's response:
+```
+ip access-list extended AllowRange
+ permit ip 192.168.0.0 0.0.0.255 any
+ permit ip 192.168.1.0 0.0.0.255 any
+ permit ip 192.168.2.0 0.0.0.255 any
+ permit ip 192.168.3.0 0.0.0.255 any
+```
+

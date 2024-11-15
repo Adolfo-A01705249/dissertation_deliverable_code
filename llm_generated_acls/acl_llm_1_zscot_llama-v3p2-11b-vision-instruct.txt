@@ -1,0 +1,3 @@
+ip access-list extended ACL_DENY_65_122_19_33
+ deny ip any host 65.122.19.33
+ permit ip any any

@@ -1,0 +1,16 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 192.168.100.0/24
+dstIP: 192.168.200.0/24
+","srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+
+",acl_llm_6_fs_llama-v3p2-11b-vision-instruct.txt,block_network_except_host,permit ip 192.168.100.0 0.0.255.255 192.168.200.0 0.0.255.255,ACCEPT,acl_manual_6.txt,block_network_except_host,deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255,REJECT
+1,"srcIp: 192.168.100.50/32
+dstIP: 192.168.0.0/16
+","srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+
+",acl_llm_6_fs_llama-v3p2-11b-vision-instruct.txt,block_network_except_host,deny ip host 192.168.100.50 192.168.200.0 0.0.255.255,REJECT,acl_manual_6.txt,block_network_except_host,permit ip any any,ACCEPT
+2,"srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+",,acl_llm_6_fs_llama-v3p2-11b-vision-instruct.txt,block_network_except_host,deny ip host 192.168.100.50 192.168.200.0 0.0.255.255,REJECT,acl_manual_6.txt,block_network_except_host,permit ip host 192.168.100.50 192.168.200.0 0.0.0.255,ACCEPT

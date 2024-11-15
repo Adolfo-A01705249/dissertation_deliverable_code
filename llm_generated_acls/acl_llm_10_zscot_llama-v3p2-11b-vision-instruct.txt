@@ -1,0 +1,5 @@
+ip access-list extended ALLOW_FTP_TCP_PORTS
+ deny   tcp any any eq ftp-data
+ deny   tcp any any eq ftp
+ permit tcp any any gt 50000 lt 51000
+ permit ip any any

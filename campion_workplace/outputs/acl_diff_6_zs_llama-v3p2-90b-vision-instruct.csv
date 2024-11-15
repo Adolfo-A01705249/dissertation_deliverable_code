@@ -1,0 +1,4 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+",,acl_llm_6_zs_llama-v3p2-90b-vision-instruct.txt,BlockBetweenNetworksExceptHost,deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255,REJECT,acl_manual_6.txt,BlockBetweenNetworksExceptHost,permit ip host 192.168.100.50 192.168.200.0 0.0.0.255,ACCEPT

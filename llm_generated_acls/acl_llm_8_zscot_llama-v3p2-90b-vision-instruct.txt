@@ -1,0 +1,3 @@
+ip access-list extended ACL_192_168
+permit ip 192.168.0.0 0.0.3.255 any
+deny ip any any

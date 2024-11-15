@@ -1,0 +1,5 @@
+ip access-list extended AllowFtpAndSpecificTcp
+ permit tcp any any eq 20
+ permit tcp any any eq 21
+ permit tcp any range 50000 51000 any
+ permit ip any any

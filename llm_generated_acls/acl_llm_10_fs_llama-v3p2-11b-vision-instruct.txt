@@ -1,0 +1,6 @@
+python
+ip access-list extended ftp_allowed
+	permit tcp any any eq ftp
+	permit tcp any any eq ftp-data
+	permit tcp any any range 50000 51000
+	permit ip any any

@@ -1,0 +1,22 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 0.0.0.0/0
+dstIP: 192.168.0.0/22
+","srcIp: 192.168.0.0/22
+dstIP: 192.168.0.0/22
+
+",acl_llm_8_fs_llama-v3p2-11b-vision-instruct.txt,allow_network_range,permit ip any 192.168.0.0 0.0.3.255,ACCEPT,acl_manual_8.txt,allow_network_range,deny ip any any,REJECT
+1,"srcIp: 0.0.0.0/0
+dstIP: 192.168.4.0/24
+","srcIp: 192.168.0.0/22
+dstIP: 192.168.4.0/24
+
+",acl_llm_8_fs_llama-v3p2-11b-vision-instruct.txt,allow_network_range,permit ip any 192.168.4.0 0.0.0.255,ACCEPT,acl_manual_8.txt,allow_network_range,deny ip any any,REJECT
+2,"srcIp: 192.168.0.0/22
+dstIP: 0.0.0.0/0
+","srcIp: 192.168.0.0/22
+dstIP: 192.168.0.0/22
+
+srcIp: 192.168.0.0/22
+dstIP: 192.168.4.0/24
+
+",acl_llm_8_fs_llama-v3p2-11b-vision-instruct.txt,allow_network_range,deny ip any any,REJECT,acl_manual_8.txt,allow_network_range,permit ip 192.168.0.0 0.0.3.255 any,ACCEPT

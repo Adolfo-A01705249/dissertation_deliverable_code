@@ -1,0 +1,16 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 0.0.0.0/0
+dstIP: 172.27.8.55/32
+","srcIp: 0.0.0.0/0
+dstIP: 172.27.8.55/32
+srcPort: [0,65535]
+dstPort: [443,443]
+TCP
+
+srcIp: 0.0.0.0/0
+dstIP: 172.27.8.55/32
+srcPort: [0,65535]
+dstPort: [80,80]
+TCP
+
+",acl_llm_0_pc_gpt-4o.txt,AllowWebBlockOthers,permit ip any any,ACCEPT,acl_manual_0.txt,AllowWebBlockOthers,deny ip any host 172.27.8.55,REJECT

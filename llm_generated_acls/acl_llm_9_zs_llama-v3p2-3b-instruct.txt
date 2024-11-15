@@ -1,0 +1,6 @@
+access-list myacl extended
+  permit tcp any any eq 80 destination-set 172.27.8.55
+  deny tcp any any established
+  deny tcp any any eq 80 host 172.27.8.53
+  deny tcp any any eq 80 host 172.27.8.54
+  accept any any

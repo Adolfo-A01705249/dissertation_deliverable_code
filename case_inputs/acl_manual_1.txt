@@ -1,0 +1,3 @@
+ip access-list extended list_name
+	deny ip any host 65.122.19.33
+	permit ip any any

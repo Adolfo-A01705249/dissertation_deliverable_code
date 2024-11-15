@@ -1,0 +1,5 @@
+ip access-list extended WebOnly
+permit tcp any host 172.27.8.55 eq www
+deny tcp any host 172.27.8.53
+deny tcp any host 172.27.8.54
+permit ip any any

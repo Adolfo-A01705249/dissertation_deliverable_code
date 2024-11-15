@@ -1,0 +1,4 @@
+ip access-list extended permit_host_network
+	deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.1.255
+	permit ip host 192.168.100.50 192.168.200.0 0.0.1.255
+	permit ip any any

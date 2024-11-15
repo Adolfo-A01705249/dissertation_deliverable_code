@@ -1,0 +1,6 @@
+>Please help me figure out the script for an extended named ACL that blocks all traffic from network 192.168.100.0/24 to network 192.168.200.0/24 except for host 192.168.100.50, and allows all other traffic. First help me break down the previous description into all the individual requirements this ACL needs to fulfill
+>Now for each requirement identify which protocol, source ip addresses, source wildcard (if applicable), destination ip addresses, destination wildcard (if applicable), and ports (if applicable) are involved
+>Now give me the commands that would implement each of those requirements
+>Now tell me the order the commands should be arranged into to fulfill the requirements properly
+>Now give me the command that starts the list and gives it a name
+>Now put all the commands together to create the full ACL script

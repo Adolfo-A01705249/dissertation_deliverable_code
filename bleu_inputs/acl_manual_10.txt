@@ -1,0 +1,5 @@
+ip access-list extended AllowFTPAccess
+	permit tcp any any eq ftp  
+	permit tcp any any range 50000 51000
+	deny tcp any any
+	permit ip any any

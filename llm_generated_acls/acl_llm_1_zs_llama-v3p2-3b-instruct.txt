@@ -1,0 +1,2 @@
+access-list acl_notest extended permit ip any any
+access-list acl_notest extended deny ip any 65.122.19.33 0.0.0.0

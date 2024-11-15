@@ -1,0 +1,3 @@
+ip access-list extended block_host
+	permit ip any host 65.122.19.33
+	deny ip any any

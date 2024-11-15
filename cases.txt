@@ -1,0 +1,40 @@
+Cases
+simple syntax use
+1 ACL that denies all traffic to the address 65.122.19.33, and permits all other traffic
+2 ACL that permits all traffic from network 192.168.1.0/24 to network 192.168.2.0/24, and denies all other traffic
+3 ACL that blocks all traffic except for the telnet connection from host 10.25.40.1 to host 172.16.5.10
+4 ACL that allows all tcp traffic to the address 192.168.10.5 using ports greater than 1023, and blocks all other traffic
+
+more advanced requirements
+5 ACL that allows web traffic to server 172.27.8.55, and blocks all other traffic
+6 ACL that blocks all traffic from network 192.168.100.0/24 to network 192.168.200.0/24 except for host 192.168.100.50, and allows all other traffic
+7 ACL that allows all traffic from network 192.168.255.32/28, and blocks all other traffic
+8 ACL that allows all traffic from networks in the range from 192.168.0.0/24 to 192.168.3.0/24, and blocks all other traffic
+
+combinations
+9 ACL that allows traffic to server 172.27.8.55 only via web, blocks all tcp traffic to servers 172.27.8.53 and 172.27.8.54, and allows all other traffic
+10 ACL that allows all ftp traffic, only allows tcp traffic if it's coming from ports in the range from 50000 to 51000, and allows all other traffic
+
+Syntax features
+✅permit something
+✅permit as default rule
+✅deny something
+✅deny as default rule
+✅use specific protocol
+✅use specific host as ip - 0.0.0.0
+✅use specific host as host - ip
+✅use any address as 0.0.0.0 255.255.255.255
+✅use any address as any
+✅use range of addresses that line up nicely with octets
+✅use range of addresses that don't line up nicely with octets
+✅use range of addreses that require some summarization
+✅use specific port as number
+✅use specific port as keyword
+✅use range of ports with range start end
+✅use range of ports with lt, gt, neq, ge, le
+
+Interesting requirements
+✅multiple ports, like web (80, 443)
+✅exceptions, like "deny everything from netA except this host"
+✅network summarization
+✅combinations, multiple requirements in a single case (require >2 rules)

@@ -1,0 +1,175 @@
+System prompt:
+You are a helpful, respectful and honest network configuration assistant.
+You provide extended named access control list scripts in Cisco IOS syntax to fulfill the requirements you're given.
+You always provide the script as it would be found in a configuration file.
+Make sure to use the syntax for *extended* and *named* access control lists.
+Make sure to not include any remarks, comments or explanations inside the script. 
+Make sure to not include any console navigation commands.
+Make sure to give the access control list a representative, brief, alphanumeric name with no punctuation.
+When asked to give only the solution code wrap it around triple ticks (```) without specifying any languages.
+
+User prompt:
+Please help me figure out the script for an extended named ACL that allows all ftp traffic, only allows tcp traffic if it's coming from ports in the range from 50000 to 51000, and allows all other traffic. First help me break down the previous description into all the individual requirements this ACL needs to fulfill
+
+The model's response:
+Here's the breakdown of the individual requirements this ACL needs to fulfill:
+
+1. Allow all FTP traffic
+2. Allow only TCP traffic from ports 50000 to 51000
+3. Allow all other traffic
+
+To achieve these requirements, we can list the following:
+- Permit protocol FTP (access-list <name> permit tcp any any eq ftp)
+- Permit established and related connections for TCP, and specifically permit TCP from UDP, where port range 50000-51000
+- Allow all other traffic
+
+User prompt:
+Now for each requirement identify which protocol, source ip addresses, source wildcard (if applicable), destination ip addresses, destination wildcard (if applicable), and ports (if applicable) are involved
+
+The model's response:
+Here's the breakdown of each requirement:
+
+1. Allow all FTP traffic
+	* Protocol: tcp (eq ftp)
+	* Source IPs: any
+	* Source Wildcard: any
+	* Destination IPs: any
+	* Destination Wildcard: any
+	* Source Ports: ftp
+	* Destination Ports: ftp
+
+2. Allow only TCP traffic from ports 50000 to 51000
+	* Protocol: tcp 
+	* Source IPs: any
+	* Source Wildcard: any
+	* Destination IPs: any
+	* Destination Wildcard: any
+	* Source Ports: 50000-51000
+	* No Destination Port specification, thus assuming any destination port is permitted.
+
+3. Allow all other traffic
+ No specific protocol, ports, or other conditions are defined to apply rules. This wildcard ACL therefore applies to any protocol and allows any IP address range and any source and destination port 
+   -> Protocol: any 
+   -> Source IPs: any 
+   -> Source Wildcard: any
+   -> Destination IPs: any 
+   -> Destination Wildcard: any
+
+User prompt:
+Now give me the commands that would implement each of those requirements
+
+The model's response:
+Here are the commands that implement each of the requirements:
+
+1. Allow all FTP traffic
+```
+access-list ftp permit tcp any any eq ftp
+```
+
+2. Allow only TCP traffic from ports 50000 to 51000
+```
+access-list tcp_ports permit tcp any any eq 50000 
+access-list tcp_ports permit tcp any any gt 51000 
+```
+You can put the two commands into one as 
+```
+access-list tcp_ports permit tcp any any range 50000 51000
+```
+
+3. Allow all other traffic
+```
+access-list other permit ip any any
+```
+
+If you want to add TCP traffic from the above to the other command, you can 
+```
+access-list other permit tcp any any
+access-list other permit ip any any
+```
+OR you can put them into one command as
+```
+access-list other permit tcp any any
+access-list other permit ip any any
+```
+However, it is recommended to use permit ip command wherever possible. 
+
+You can also add a fourth command to apply the rules in the named access list:
+```
+ip access-group ftp in
+ip access-group tcp_ports in
+ip access-group other in
+```
+
+User prompt:
+Now tell me the order the commands should be arranged into to fulfill the requirements properly
+
+The model's response:
+To fulfill the requirements properly, the order of the commands should be as follows:
+
+```
+access-list ftp permit tcp any any eq ftp
+
+access-list tcp_ports permit tcp any any range 50000 51000
+
+access-list other permit udp any any
+access-list other permit icmp any any
+access-list other permit tcp any any
+access-list other permit ip any any
+```
+
+The first command allows all FTP traffic.
+
+The second command allows only TCP traffic from the source ports 50000 to 51000. 
+
+The third command is actually a general access list allowing any ip traffic not already considered in the ACLs above, since it permits udp (ftp), icmp (ping, traceroute) and ip traffic.
+
+Applying these access lists requires the following ip access-group statements:
+
+```
+ip access-group ftp in
+ip access-group tcp_ports in
+ip access-group other in
+```
+
+User prompt:
+Now give me the command that starts the list and gives it a name
+
+The model's response:
+```
+ip access-list extended allow_ftps
+```
+
+User prompt:
+Now put all the commands together to create the full ACL script
+
+The model's response:
+```
+ip access-list extended allow_ftps
+
+access-list allow_ftps permit tcp any any eq ftp
+
+access-list allow_ftps permit tcp any any range 50000 51000
+
+access-list allow_ftps permit udp any any
+access-list allow_ftps permit icmp any any
+access-list allow_ftps permit tcp any any
+access-list allow_ftps permit ip any any
+
+ip access-group allow_ftps in
+```
+
+User prompt:
+Now please give me only the solution as only one code snippet so I can store it in a configuration file (without explanations or any other text)
+
+The model's response:
+```
+ip access-list extended allow_ftps
+access-list allow_ftps permit tcp any any eq ftp
+access-list allow_ftps permit tcp any any range 50000 51000
+access-list allow_ftps permit udp any any
+access-list allow_ftps permit icmp any any
+access-list allow_ftps permit tcp any any
+access-list allow_ftps permit ip any any
+ip access-group allow_ftps in
+```
+

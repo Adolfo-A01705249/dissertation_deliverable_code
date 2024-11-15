@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that denies all traffic to the address 65.122.19.33, and permits all other traffic. Let's think step by step.

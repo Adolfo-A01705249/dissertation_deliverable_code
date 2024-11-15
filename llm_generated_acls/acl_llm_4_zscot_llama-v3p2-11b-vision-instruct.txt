@@ -1,0 +1,2 @@
+ip access-list extended ACL_TCP_Port_1023
+permit tcp any host 192.168.10.5 eq gt 1023

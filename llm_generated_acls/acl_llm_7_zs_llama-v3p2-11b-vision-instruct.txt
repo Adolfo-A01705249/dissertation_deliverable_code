@@ -1,0 +1,3 @@
+ip access-list extended extended_all_19216825532
+ permit ip host 192.168.255.32 any
+ deny   ip any any

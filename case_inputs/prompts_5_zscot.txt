@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that allows web traffic to server 172.27.8.55, and blocks all other traffic. Let's think step by step.

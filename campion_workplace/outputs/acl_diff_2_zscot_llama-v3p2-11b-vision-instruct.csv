@@ -1,0 +1,10 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 192.168.1.0/32
+dstIP: 255.255.255.0/32
+",,acl_llm_2_zscot_llama-v3p2-11b-vision-instruct.txt,PERMIT_192_168_1_TO_192_168_2,permit ip host 192.168.1.0 host 255.255.255.0,ACCEPT,acl_manual_2.txt,PERMIT_192_168_1_TO_192_168_2,deny ip any any,REJECT
+1,"srcIp: 192.168.2.0/32
+dstIP: 255.255.255.0/32
+",,acl_llm_2_zscot_llama-v3p2-11b-vision-instruct.txt,PERMIT_192_168_1_TO_192_168_2,permit ip host 192.168.2.0 host 255.255.255.0,ACCEPT,acl_manual_2.txt,PERMIT_192_168_1_TO_192_168_2,deny ip any any,REJECT
+2,"srcIp: 192.168.1.0/24
+dstIP: 192.168.2.0/24
+",,acl_llm_2_zscot_llama-v3p2-11b-vision-instruct.txt,PERMIT_192_168_1_TO_192_168_2,deny ip any any,REJECT,acl_manual_2.txt,PERMIT_192_168_1_TO_192_168_2,permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255,ACCEPT

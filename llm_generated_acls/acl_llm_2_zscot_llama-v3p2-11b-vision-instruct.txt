@@ -1,0 +1,4 @@
+ip access-list extended PERMIT_192_168_1_TO_192_168_2
+permit ip host 192.168.1.0 host 255.255.255.0
+permit ip host 192.168.2.0 host 255.255.255.0
+deny ip any any

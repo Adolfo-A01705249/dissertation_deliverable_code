@@ -1,0 +1,6 @@
+ip access-list extended ALLOWNETWORKS
+permit ip any 192.168.0.0 0.0.0.255 any
+permit ip any 192.168.1.0 0.0.0.255 any
+permit ip any 192.168.2.0 0.0.0.255 any
+permit ip any 192.168.3.0 0.0.0.255 any
+deny ip any any

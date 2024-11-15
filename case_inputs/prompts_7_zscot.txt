@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that allows all traffic from network 192.168.255.32/28, and blocks all other traffic. Let's think step by step.

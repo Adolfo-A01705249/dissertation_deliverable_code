@@ -1,0 +1,7 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 192.168.255.32/28
+dstIP: 0.0.0.0/0
+","srcIp: 192.168.255.32/32
+dstIP: 0.0.0.0/0
+
+",acl_llm_7_pc_llama-v3p2-11b-vision-instruct.txt,allow_192_168_255_32,deny ip any any,REJECT,acl_manual_7.txt,allow_192_168_255_32,permit ip 192.168.255.32 0.0.0.15 any,ACCEPT

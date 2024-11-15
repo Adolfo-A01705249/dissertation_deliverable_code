@@ -1,0 +1,7 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 0.0.0.0/0
+dstIP: 192.168.10.5/32
+srcPort: [0,65535]
+dstPort: [1024,65535]
+TCP
+",,acl_llm_4_pc_llama-v3p2-11b-vision-instruct.txt,allow_tcp_to_19216810_5,deny ip any any,REJECT,acl_manual_4.txt,allow_tcp_to_19216810_5,permit tcp any host 192.168.10.5 gt 1023,ACCEPT

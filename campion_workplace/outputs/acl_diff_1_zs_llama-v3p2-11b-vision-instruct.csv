@@ -1,0 +1,13 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 0.0.0.0/0
+dstIP: 65.122.19.33/32
+","srcIp: 65.122.19.33/32
+dstIP: 65.122.19.33/32
+
+",acl_llm_1_zs_llama-v3p2-11b-vision-instruct.txt,deny-host-65-122-19-33,permit ip any any,ACCEPT,acl_manual_1.txt,deny-host-65-122-19-33,deny ip any host 65.122.19.33,REJECT
+1,"srcIp: 65.122.19.33/32
+dstIP: 0.0.0.0/0
+","srcIp: 65.122.19.33/32
+dstIP: 65.122.19.33/32
+
+",acl_llm_1_zs_llama-v3p2-11b-vision-instruct.txt,deny-host-65-122-19-33,deny ip host 65.122.19.33 any,REJECT,acl_manual_1.txt,deny-host-65-122-19-33,permit ip any any,ACCEPT

@@ -1,0 +1,4 @@
+ip access-list extended aclftpallowall
+ permit tcp any any eq ftp
+ permit tcp any range 50000 51000
+ permit ip any any

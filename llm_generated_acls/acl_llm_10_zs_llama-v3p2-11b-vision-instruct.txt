@@ -1,0 +1,4 @@
+ip access-list extended ftp-access
+ permit tcp any any eq ftp
+ permit tcp any any (50000 <= src-port <= 51000)
+ permit ip any any

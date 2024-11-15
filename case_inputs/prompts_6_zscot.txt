@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that blocks all traffic from network 192.168.100.0/24 to network 192.168.200.0/24 except for host 192.168.100.50, and allows all other traffic. Let's think step by step.

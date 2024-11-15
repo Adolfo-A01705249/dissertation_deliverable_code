@@ -1,0 +1,60 @@
+>Script for an ACL that permits all traffic to the address 203.0.113.45, and denies all other traffic:
+```
+ip access-list extended block_host
+	permit ip any host 203.0.113.45
+	deny ip any any
+```
+
+Script for an ACL that denies all traffic from network 172.20.0.0/16 to network 172.21.0.0/16, and permits all other traffic:
+```
+ip access-list extended block_network_to_network
+	deny ip 172.20.0.0 0.0.255.255 172.21.0.0 0.0.255.255
+	permit ip any any
+```
+
+Script for an ACL that blocks all traffic to network 172.27.240.0/20, and allows all other traffic
+```
+ip access-list extended block_network
+	deny ip any 172.27.240.0 0.0.15.255 
+	permit ip any any
+```
+
+Script for an ACL that allows all active ftp traffic to server 192.168.300.35, and
+blocks all other traffic
+```
+ip access-list extended allow_active_ftp
+	permit tcp any host 192.168.300.35 eq ftp
+	permit tcp any host 192.168.300.35 eq ftp-data
+	deny ip any any
+```
+
+Script for an ACL that allows all traffic to networks in the range from 192.168.64.0/24 to 192.168.68.0/24, and blocks all other traffic
+```
+ip access-list extended allow_network_range
+	permit ip any 192.168.64.0 0.0.4.255
+ 	deny ip any any
+```
+
+Script for an ACL that blocks all tcp traffic to the address 192.168.20.25 using ports less than 1024, and allows all other traffic
+```
+ip access-list extended block_less_than
+	deny tcp any host 192.168.20.25 lt 1024
+	permit ip any any
+```
+
+Script for an ACL that allows all traffic from network 172.50.0.0/16 to network 172.60.0.0/16 except for host 172.50.45.67, and blocks all other traffic
+```
+ip access-list extended permit_network_except_host
+	deny ip host 172.50.45.67 172.60.0.0 0.0.255.255
+	permit ip 172.50.0.0 0.0.255.255 172.60.0.0 0.0.255.255
+	deny ip any any
+```
+
+Script for an ACL that allows tcp traffic from ports in the range from 3000 to 3100, and blocks all other traffic
+```
+ip access-list extended permit_port_range
+	permit tcp any any range 3000 3100
+	deny ip any any
+```
+
+Script for an ACL that blocks all traffic except for the telnet connection from host 10.25.40.1 to host 172.16.5.10

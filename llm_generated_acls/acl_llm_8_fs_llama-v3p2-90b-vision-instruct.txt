@@ -1,0 +1,3 @@
+ip access-list extended allow_network_range
+	permit ip any 192.168.0.0 0.0.3.255
+	deny ip any any

@@ -1,0 +1,5 @@
+ip access-list extended ACLBLOCK100200
+ permit ip 192.168.100.50 0.0.0.0 192.168.200.0 0.0.0.255
+ permit ip 192.168.100.50 0.0.0.0 any
+ deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255
+ permit ip any any

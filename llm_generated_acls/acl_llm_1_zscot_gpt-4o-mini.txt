@@ -1,0 +1,3 @@
+ip access-list extended DenySpecificIP
+ deny ip host 65.122.19.33 any
+ permit ip any any

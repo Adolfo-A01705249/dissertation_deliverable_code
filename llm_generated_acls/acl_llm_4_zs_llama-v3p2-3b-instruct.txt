@@ -1,0 +1,5 @@
+extended acl_all_tcp_traffic_to_10_5
+  deny tcp any any_eq -d 192.168.10.5
+  deny tcp any any_eq -dnot 192.168.10.5
+  priority 100
+  ip access-list extended acl_all_tcp_traffic_to_10_5

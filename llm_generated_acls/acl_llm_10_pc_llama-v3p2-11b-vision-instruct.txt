@@ -1,0 +1,8 @@
+ip access-list extended allow_ftps
+access-list allow_ftps permit tcp any any eq ftp
+access-list allow_ftps permit tcp any any range 50000 51000
+access-list allow_ftps permit udp any any
+access-list allow_ftps permit icmp any any
+access-list allow_ftps permit tcp any any
+access-list allow_ftps permit ip any any
+ip access-group allow_ftps in

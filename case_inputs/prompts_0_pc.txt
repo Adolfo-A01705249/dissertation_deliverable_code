@@ -1,0 +1,6 @@
+>Please help me figure out the script for an extended named ACL that allows traffic to server 172.27.8.55 only via web, blocks all tcp traffic to servers 172.27.8.53 and 172.27.8.54, and allows all other traffic. Note that web traffic uses ports 80 for http and 443 for https, and that only allowing web traffic to a given server implies blocking all other kinds of traffic to said server. First help me break down the previous description into all the individual requirements this ACL needs to fulfill
+>Now for each requirement identify which protocol, source ip addresses, source wildcard (if applicable), destination ip addresses, destination wildcard (if applicable), and ports (if applicable) are involved
+>Now give me the commands that would implement each of those requirements
+>Now tell me the order the commands should be arranged into to fulfill the requirements properly
+>Now give me the command that starts the list and gives it a name
+>Now put all the commands together to create the full ACL script

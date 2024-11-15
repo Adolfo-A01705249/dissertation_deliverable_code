@@ -1,0 +1,5 @@
+ip access-list extended allow-web-server-and-all-other-traffic
+ deny tcp any 172.27.8.53 any
+ deny tcp any 172.27.8.54 any
+ permit ip any any
+ permit tcp any 172.27.8.55 eq 80

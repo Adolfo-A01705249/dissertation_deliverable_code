@@ -1,0 +1,2 @@
+Case number,Prompting technique,Model,Matched,Diff found,Well formed,Functionally equivalent,BLEU score
+9,zs,llama-v3p2-90b-vision-instruct,True,True,True,False,0.5769303578623891

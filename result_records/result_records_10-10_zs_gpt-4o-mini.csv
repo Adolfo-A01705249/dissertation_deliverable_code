@@ -1,0 +1,2 @@
+Case number,Prompting technique,Model,Matched,Diff found,Well formed,Functionally equivalent,BLEU score
+10,zs,gpt-4o-mini,True,True,True,False,0.758292326972591

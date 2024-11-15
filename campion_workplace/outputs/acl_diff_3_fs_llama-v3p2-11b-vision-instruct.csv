@@ -1,0 +1,16 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 0.0.0.0/0
+dstIP: 0.0.0.0/0
+","srcIp: 0.0.0.0/0
+dstIP: 192.168.20.25/32
+srcPort: [0,65535]
+dstPort: [0,1023]
+TCP
+
+srcIp: 10.25.40.1/32
+dstIP: 172.16.5.10/32
+srcPort: [0,65535]
+dstPort: [23,23]
+TCP
+
+",acl_llm_3_fs_llama-v3p2-11b-vision-instruct.txt,block_less_than,permit ip any any,ACCEPT,acl_manual_3.txt,block_less_than,deny ip any any,REJECT

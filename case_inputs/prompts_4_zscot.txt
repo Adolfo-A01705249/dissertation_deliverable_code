@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that allows all tcp traffic to the address 192.168.10.5 using ports greater than 1023, and blocks all other traffic. Let's think step by step.

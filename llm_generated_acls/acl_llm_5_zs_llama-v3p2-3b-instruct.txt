@@ -1,0 +1,5 @@
+access-list extended WEBSERVER
+  deny ip any any
+  ip access-group WEBSERVER in
+  ip access-group WEBSERVER out
+  ip access-group WEBSERVER in ip 172.27.8.55 eq http

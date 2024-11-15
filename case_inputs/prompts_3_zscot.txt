@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that blocks all traffic except for the telnet connection from host 10.25.40.1 to host 172.16.5.10. Let's think step by step.

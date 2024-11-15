@@ -1,0 +1,5 @@
+ip access-list extended permit_ftp_with_port_range
+	permit tcp any any eq ftp
+	permit tcp any any eq ftp-data
+	permit tcp any any range 50000 51000
+	permit ip any any

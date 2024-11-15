@@ -1,0 +1,3 @@
+ip access-list extended ALLOW_TELNET
+permit tcp host 10.25.40.1 host 172.16.5.10 eq 23
+deny ip any any

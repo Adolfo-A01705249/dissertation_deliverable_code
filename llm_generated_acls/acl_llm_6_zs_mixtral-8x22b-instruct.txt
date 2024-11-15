@@ -1,0 +1,5 @@
+vbnet
+ip access-list extended Block100_200
+  deny ip host 192.168.100.50 192.168.200.0 0.0.0.255
+  deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255
+  permit ip any any

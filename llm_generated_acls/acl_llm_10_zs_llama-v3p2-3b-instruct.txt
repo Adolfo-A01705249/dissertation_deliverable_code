@@ -1,0 +1,5 @@
+access-list ftp_all extended
+ deny ip any any
+  deniedIp any any eq ftp
+  permit ip any any eq 50000-51000
+  permit ip any any

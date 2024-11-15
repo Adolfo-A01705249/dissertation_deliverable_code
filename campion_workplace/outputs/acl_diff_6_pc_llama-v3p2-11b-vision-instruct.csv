@@ -1,0 +1,88 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 192.168.100.0/24
+dstIP: 192.168.200.0/24
+srcPort: [0,65535]
+dstPort: [80,80]
+TCP
+","srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+srcPort: [0,65535]
+dstPort: [80,80]
+TCP
+
+",acl_llm_6_pc_llama-v3p2-11b-vision-instruct.txt,ALLOW_EVERYTHING_ELSE,permit tcp any any eq www,ACCEPT,acl_manual_6.txt,ALLOW_EVERYTHING_ELSE,deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255,REJECT
+1,"srcIp: 192.168.100.0/24
+dstIP: 192.168.200.0/24
+srcPort: [0,65535]
+dstPort: [53,53]
+UDP
+","srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+srcPort: [0,65535]
+dstPort: [53,53]
+UDP
+
+",acl_llm_6_pc_llama-v3p2-11b-vision-instruct.txt,ALLOW_EVERYTHING_ELSE,permit udp any any eq domain,ACCEPT,acl_manual_6.txt,ALLOW_EVERYTHING_ELSE,deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255,REJECT
+2,"srcIp: 0.0.0.0/0
+dstIP: 0.0.0.0/0
+","srcIp: 0.0.0.0/0
+dstIP: 0.0.0.0/0
+srcPort: [0,65535]
+dstPort: [53,53]
+UDP
+
+srcIp: 0.0.0.0/0
+dstIP: 0.0.0.0/0
+srcPort: [0,65535]
+dstPort: [80,80]
+TCP
+
+srcIp: 192.168.100.0/24
+dstIP: 0.0.0.0/0
+ICMP
+
+srcIp: 192.168.100.0/24
+dstIP: 192.168.200.0/24
+
+srcIp: 192.168.100.50/32
+dstIP: 0.0.0.0/0
+srcPort: [0,65535]
+dstPort: [53,53]
+UDP
+
++ 2 more",acl_llm_6_pc_llama-v3p2-11b-vision-instruct.txt,ALLOW_EVERYTHING_ELSE,DEFAULT REJECT,REJECT,acl_manual_6.txt,ALLOW_EVERYTHING_ELSE,permit ip any any,ACCEPT
+3,"srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+","srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+ICMP
+
+srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+srcPort: [0,65535]
+dstPort: [53,53]
+UDP
+
+srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+srcPort: [0,65535]
+dstPort: [80,80]
+TCP
+
+",acl_llm_6_pc_llama-v3p2-11b-vision-instruct.txt,ALLOW_EVERYTHING_ELSE,DEFAULT REJECT,REJECT,acl_manual_6.txt,ALLOW_EVERYTHING_ELSE,permit ip host 192.168.100.50 192.168.200.0 0.0.0.255,ACCEPT
+4,"srcIp: 192.168.100.0/24
+dstIP: 0.0.0.0/0
+ICMP
+","srcIp: 192.168.100.0/24
+dstIP: 192.168.200.0/24
+ICMP
+
+srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+ICMP
+
+",acl_llm_6_pc_llama-v3p2-11b-vision-instruct.txt,ALLOW_EVERYTHING_ELSE,deny   icmp 192.168.100.0 0.0.0.255 any,REJECT,acl_manual_6.txt,ALLOW_EVERYTHING_ELSE,permit ip any any,ACCEPT
+5,"srcIp: 192.168.100.50/32
+dstIP: 192.168.200.0/24
+ICMP
+",,acl_llm_6_pc_llama-v3p2-11b-vision-instruct.txt,ALLOW_EVERYTHING_ELSE,deny   icmp 192.168.100.0 0.0.0.255 any,REJECT,acl_manual_6.txt,ALLOW_EVERYTHING_ELSE,permit ip host 192.168.100.50 192.168.200.0 0.0.0.255,ACCEPT

@@ -1,0 +1,8 @@
+access-list ACL1 extended named telnet Block
+  permit ip any any ltm
+  permit telnet host 10.25.40.1 host 172.16.5.10 ltm
+```
+```
+```
+```
+ip http mtu 1500

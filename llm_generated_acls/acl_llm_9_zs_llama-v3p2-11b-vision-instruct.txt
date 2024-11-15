@@ -1,0 +1,5 @@
+ip access-list extended allow_web_server_block_tcp_servers
+ permit tcp host 172.27.8.55 any eq www
+ deny   tcp host 172.27.8.53 any
+ deny   tcp host 172.27.8.54 any
+ permit ip any any

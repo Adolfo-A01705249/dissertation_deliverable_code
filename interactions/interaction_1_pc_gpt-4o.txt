@@ -1,0 +1,111 @@
+System prompt:
+You are a helpful, respectful and honest network configuration assistant.
+You provide extended named access control list scripts in Cisco IOS syntax to fulfill the requirements you're given.
+You always provide the script as it would be found in a configuration file.
+Make sure to use the syntax for *extended* and *named* access control lists.
+Make sure to not include any remarks, comments or explanations inside the script. 
+Make sure to not include any console navigation commands.
+Make sure to give the access control list a representative, brief, alphanumeric name with no punctuation.
+When asked to give only the solution code wrap it around triple ticks (```) without specifying any languages.
+
+User prompt:
+Please help me figure out the script for an extended named ACL that denies all traffic to the address 65.122.19.33, and permits all other traffic. First help me break down the previous description into all the individual requirements this ACL needs to fulfill
+
+The model's response:
+To break down the requirements for your extended named ACL:
+
+1. **Deny all traffic to a specific address:**
+   - Traffic destined for the IP address 65.122.19.33 must be denied.
+   
+2. **Permit all other traffic:**
+   - Anything not matching the denial criteria (traffic to IP 65.122.19.33) must be permitted.
+
+These requirements translate into:
+
+- An access control list rule that explicitly denies any IP traffic (regardless of protocol, source address, or port) to the destination IP 65.122.19.33.
+  
+- An access control list rule that allows any other IP traffic not matching the above condition.
+
+With the requirements laid out, I will now provide you with the script. Let me know if you are ready for it.
+
+User prompt:
+Now for each requirement identify which protocol, source ip addresses, source wildcard (if applicable), destination ip addresses, destination wildcard (if applicable), and ports (if applicable) are involved
+
+The model's response:
+Certainly, let's break down each requirement with their involved elements:
+
+1. **Deny all traffic to the address 65.122.19.33:**
+
+   - **Protocol:** All IP protocols (`ip`).
+   - **Source IP Addresses:** Any source (`any`).
+   - **Source Wildcard:** Not applicable, since `any` is used.
+   - **Destination IP Address:** 65.122.19.33.
+   - **Destination Wildcard:** 0.0.0.0 (to match the exact IP address).
+   - **Ports:** Not applicable, since all ports and protocols are denied.
+
+2. **Permit all other traffic:**
+
+   - **Protocol:** All IP protocols (`ip`).
+   - **Source IP Addresses:** Any source (`any`).
+   - **Source Wildcard:** Not applicable, since `any` is used.
+   - **Destination IP Addresses:** Any destination (`any`).
+   - **Destination Wildcard:** Not applicable, since `any` is used.
+   - **Ports:** Not applicable, since all remaining traffic should be permitted.
+
+These elements will guide how each ACL entry is constructed in the script. Let me know when you are ready to see the configuration script.
+
+User prompt:
+Now give me the commands that would implement each of those requirements
+
+The model's response:
+```
+ip access-list extended BlockToSpecificIP
+ deny ip any host 65.122.19.33
+ permit ip any any
+```
+
+User prompt:
+Now tell me the order the commands should be arranged into to fulfill the requirements properly
+
+The model's response:
+The commands should be arranged in the following order to properly fulfill the requirements:
+
+1. Deny all traffic to the specific address.
+2. Permit all other traffic.
+
+Here is the order:
+
+```
+ip access-list extended BlockToSpecificIP
+ deny ip any host 65.122.19.33
+ permit ip any any
+```
+
+User prompt:
+Now give me the command that starts the list and gives it a name
+
+The model's response:
+```
+ip access-list extended BlockToSpecificIP
+```
+
+User prompt:
+Now put all the commands together to create the full ACL script
+
+The model's response:
+```
+ip access-list extended BlockToSpecificIP
+ deny ip any host 65.122.19.33
+ permit ip any any
+```
+
+User prompt:
+Now please give me only the solution as only one code snippet so I can store it in a configuration file (without explanations or any other text)
+
+The model's response:
+```
+ip access-list extended BlockToSpecificIP
+ deny ip any host 65.122.19.33
+ permit ip any any
+```
+

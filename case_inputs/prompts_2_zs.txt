@@ -1,0 +1,1 @@
+>Please give me the script for an extended named ACL that permits all traffic from network 192.168.1.0/24 to network 192.168.2.0/24, and denies all other traffic

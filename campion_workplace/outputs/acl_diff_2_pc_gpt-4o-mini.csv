@@ -1,0 +1,13 @@
+,Included_Packets,Excluded_Packets,Node1,Filter1,Text1,Action1,Node2,Filter2,Text2,Action2
+0,"srcIp: 192.168.1.0/24
+dstIP: 0.0.0.0/0
+","srcIp: 192.168.1.0/24
+dstIP: 192.168.2.0/24
+
+",acl_llm_2_pc_gpt-4o-mini.txt,PermitDenyACL,permit ip 192.168.1.0 0.0.0.255 any,ACCEPT,acl_manual_2.txt,PermitDenyACL,deny ip any any,REJECT
+1,"srcIp: 0.0.0.0/0
+dstIP: 192.168.2.0/24
+","srcIp: 192.168.1.0/24
+dstIP: 192.168.2.0/24
+
+",acl_llm_2_pc_gpt-4o-mini.txt,PermitDenyACL,permit ip any 192.168.2.0 0.0.0.255,ACCEPT,acl_manual_2.txt,PermitDenyACL,deny ip any any,REJECT

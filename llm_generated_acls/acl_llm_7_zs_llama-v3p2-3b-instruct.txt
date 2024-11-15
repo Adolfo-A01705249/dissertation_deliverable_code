@@ -1,0 +1,4 @@
+nameacl allTraffic
+ ip access-list extended allTraffic
+  permit ip 192.168.255.32 0.0.0.7 any
+  deny   any any

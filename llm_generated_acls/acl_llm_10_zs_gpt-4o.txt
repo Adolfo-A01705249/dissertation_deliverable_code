@@ -1,0 +1,4 @@
+ip access-list extended FTP_PORTS_OTHER
+ permit tcp any any eq ftp
+ permit tcp any range 50000 51000 any
+ permit ip any any
